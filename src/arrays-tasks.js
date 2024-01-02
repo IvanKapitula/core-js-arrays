@@ -36,7 +36,7 @@ function getIntervalArray(start, end) {
   }
   const res = Array.from({ length: arrLength }, () => 0);
   let count = start - 1;
-  return res.map(function () {
+  return res.map(function hi() {
     count += 1;
     return count;
   });
@@ -90,7 +90,7 @@ function findElement(arr, value) {
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
 function findAllOccurrences(arr, item) {
-  const res = arr.filter(function (el) {
+  const res = arr.filter(function hi(el) {
     if (el === item) {
       return false;
     }
@@ -320,14 +320,6 @@ function flattenArray(/* nestedArray */) {
  */
 function selectMany(/* arr, childrenSelector */) {
   throw new Error('Not implemented');
-  // if (typeof arr[0][0] === 'string') {
-  //   return arr.map(childrenSelector).join(',').split(',');
-  // }
-  // return arr
-  //   .map(childrenSelector)
-  //   .join(',')
-  //   .split(',')
-  //   .map((x) => Number(x));
 }
 
 /**
@@ -444,7 +436,7 @@ function getIdentityMatrix(n) {
     Array.from({ length: n }, () => 0)
   );
   let count = 0;
-  res.map(function (el) {
+  res.map(function hi(el) {
     const curr = el;
     curr[count] = 1;
     count += 1;
