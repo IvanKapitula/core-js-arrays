@@ -55,8 +55,22 @@ function getIntervalArray(start, end) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  let result;
+  if (arr1.length === arr2.length) {
+    result = arr1.map((el, index) => el + arr2[index]);
+  }
+  if (arr2.length > arr1.length) {
+    result = arr1
+      .map((el, index) => el + arr2[index])
+      .concat(arr2.slice(arr1.length, arr2.length));
+  }
+  if (arr1.length > arr2.length) {
+    result = arr2
+      .map((el, index) => el + arr1[index])
+      .concat(arr1.slice(arr2.length, arr1.length));
+  }
+  return result;
 }
 
 /**
@@ -148,8 +162,23 @@ function getStringsLength(arr) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  let result;
+  if (arr.length === 0) {
+    result = 0;
+    return result;
+  }
+  if (arr.length !== 0) {
+    result = arr.reduce((acc, value) => acc + value, 0);
+  }
+  const resultToArray = `${result / arr.length}`.split('');
+  if (
+    resultToArray.slice(resultToArray.indexOf('.') + 1, result.length).length >
+    2
+  ) {
+    return +(result / arr.length).toFixed(2);
+  }
+  return result / arr.length;
 }
 
 /**
